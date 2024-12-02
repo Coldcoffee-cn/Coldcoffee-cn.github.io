@@ -1,0 +1,269 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*导航栏样式设置*/
+li,a,button{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-image: url("images/title.webp");
+}
+
+/* 搜索框容器样式 */
+.search-container {
+    flex-grow: 2;  /* 让搜索框占据剩余空间 */
+    text-align: center;  /* 使搜索框居中 */
+    display: flex;  /* 使用 flex 布局 */
+    align-items: center;  /* 垂直居中 */
+}
+
+.search-container input {
+    width: 100%;  /* 控制搜索框宽度 */
+    height: 55px;
+    padding: 10px;  /* 增加内边距 */
+    font-size: 16px;  /* 字体大小 */
+    border: 1px solid #ccc;  /* 边框 */
+    border-radius: 20px;  /* 圆角 */
+    background-color: rgba(50, 50, 50, 0.8);
+    margin-right: 10px;  /* 给搜索框和按钮之间留些空间 */
+}
+
+.search-container input:focus{
+    border: 1px solid #ccc;  /* 边框 */
+    background-color: rgba(50, 50, 50, 0.9);
+    color: #fff;
+}
+
+.search-container button{
+    width: 40px;  /* 增加按钮宽度 */
+    height: 60px;  /* 增加按钮高度 */
+    background-color: rgba(0, 136, 169, 1);  /* 设置背景色 */
+    border: none;  /* 去掉默认边框 */
+    border-radius: 50%;  /* 使按钮圆形 */
+    cursor: pointer;  /* 鼠标悬停时显示指针 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-container button:hover{
+    background-color: rgba(0, 136, 169,0.7);
+}
+
+.logo{
+    cursor: pointer;
+    order: 3;
+    margin-right: 100px;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav_links li a:hover{
+    color: #0088a9;
+}
+
+button{
+    padding: 10px 30px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: rgba(0, 136, 169,0.7);
+}
+
+.pop-title {
+    padding: 20px 0 0;
+}
+
+.pop-title .pop-tip {
+    font-size: 18px;
+    color: #61666d;
+    margin-bottom: 30px;
+}
+
+.pop-tip {
+    width: 65%;        /* 容器宽度为 50% */
+    margin: 0 auto;    /* 自动居中 */
+}
+
+.main-body {
+    width: 1070px;
+    margin: 0 auto;    /* 自动居中 */
+}
+
+.card-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pop-title .card-list .video-card {
+    width: 530px;
+    margin-bottom: 20px;
+}
+
+.video-card {
+    display: flex;
+    margin-bottom: 40px;
+    height: 116px; /* 如果需要自适应内容，可以改为 auto */
+    width: 530px;
+    border-radius: 2px;
+    position: relative;
+}
+
+.video-card-pic {
+    width: 206px;            /* 固定宽度 */
+    height: 116px;           /* 固定高度 */
+    flex-shrink: 0;
+    margin-right: 10px;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;        /* 避免图片超出容器范围 */
+}
+
+.video-card-pic img {
+    width: 100%;             /* 使图片宽度充满容器 */
+    height: 100%;            /* 使图片高度充满容器 */
+    object-fit: cover;       /* 保持图片比例，并裁剪多余部分填充容器 */
+}
+
+.video-card-info{
+    cursor: pointer;
+    width: 314px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 0 70px 0 0;
+}
+
+.video-card .video-name {
+    display: -webkit-box;
+    height: 43px;
+    font-size: 14px;
+    color: #18191c;
+    padding: 0;
+    margin-bottom: 8px;
+    line-height: 20px;
+    transition: color .3s;
+    font-weight: 600;
+}
+
+.card-data {
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: flex-start; /* 子元素左对齐 */
+    gap: 5px; /* 子元素之间的间距 */
+    color: #9499a0;
+    margin-bottom: 4px;
+}
+
+.card-data span {
+    font-size: 12px; /* 根据需要调整文字大小 */
+}
+
+.video-card .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    filter: alpha(opacity=70);
+    z-index: 1;
+    border-radius: 4px;
+    transition: 0.3s all linear;
+}
+
+.video-card:hover .mask {
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+}
+
+.tips {
+    display: block;
+    width: 296px;
+    height: 22px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #717171;
+    margin-bottom: 12px;
+}
+
+footer{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 确保分开 */
+    padding: 0 20%;
+    background-color: #f6f9fa;
+}
+
+.block-left {
+    display: flex;
+    flex-direction: column; /* 保持内容垂直布局 */
+    max-width: 50%;
+}
+
+.foot-ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 创建 2 列 */
+    gap: 20px; /* 列项之间的间距 */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+footer .foot-ul a {
+    color: black;
+    font-size: 20px;
+}
+
+.block-middle p {
+    margin: 0;
+    padding: 0;
+    color: #717171;
+    font-size: 12px;
+    display: block;
+    height: 24px;
+    line-height: 24px;
+}
+
+.block-right .logo {
+    height: 150px;  /* 设置图片高度 */
+}
